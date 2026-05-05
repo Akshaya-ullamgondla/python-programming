@@ -1,0 +1,18 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        slow=head# initial placed at the head point
+        fast=head
+        while(fast!=None and fast.next!=None):# the process shi=ould continue until the faster  go to the none(last of linkeld list)
+            slow=slow.next# one step to jump
+            fast=fast.next.next# two steps to jump
+            if(fast==slow):                # cycle is detected
+                return True # if it condition fails then cycle is not detected so that return statement at outside of while loop
+        return False
+
+        
